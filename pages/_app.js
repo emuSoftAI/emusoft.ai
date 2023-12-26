@@ -1,6 +1,12 @@
-import "@/styles/globals.css";
+import "../styles/globals.css";
 import Head from "next/head";
 import Layout from "../components/Layout";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
+import { QueryClient, QueryClientProvider } from "react-query";
+
+const queryClient = new QueryClient();
+config.autoAddCss = false;
 
 export default function App({ Component, pageProps }) {
   return (
@@ -13,9 +19,11 @@ export default function App({ Component, pageProps }) {
         />
         <title>EMUSoft.AI</title>
       </Head>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <QueryClientProvider client={queryClient}>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </QueryClientProvider>
     </>
   );
 }
