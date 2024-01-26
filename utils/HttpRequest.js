@@ -1,14 +1,28 @@
 import axios from "axios";
 
 export default class HttpRequest {
-  // craete a PRIVATE variable named url
+  #url;
 
   constructor() {
-    // assign BACKEND_API to url
+    // this.#url = process.env.NEXT_PUBLIC_BACKEND_API;
+    this.#url = "http://localhost:8000";
   }
 
-  // Run the axios on body of functions
-  async get(endpoint, payload) {}
+  async get(endpoint, payload) {
+    try {
+      console.log(`${this.#url}/${endpoint}`);
+
+      const response = await axios.get(`${this.#url}/${endpoint}`, {
+        params: {
+          ...payload,
+        },
+      });
+
+      return response.data;
+    } catch (e) {
+      return e.response.data;
+    }
+  }
 
   async post(endpoint, payload) {}
 

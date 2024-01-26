@@ -4,10 +4,10 @@ import Container from "../Container";
 
 const LINKS = [
   { href: "#activities", name: "Activities" },
+  { href: "#career-talks", name: "Career Talks" },
+  { href: "#tutorials", name: "Tutorial" },
   { href: "#projects", name: "Projects" },
   { href: "#about", name: "About Us" },
-  { href: "#vision", name: "Our Vision" },
-  { href: "#directors", name: "Board of Directors" },
 ];
 
 const Navbar = () => {
@@ -21,10 +21,11 @@ const Navbar = () => {
               width={1563}
               height={1563}
               alt="EMUSoft AI"
-              className="w-20"
+              className="w-14 lg:w-20"
+              priority
             />
           </Link>
-          <ul className="flex items-center gap-4 ms-auto">
+          <ul className="lg:flex hidden items-center gap-6 ms-auto">
             {LINKS.map((link) => (
               <Link className="nav-link" href={link.href} key={link.href}>
                 {link.name}

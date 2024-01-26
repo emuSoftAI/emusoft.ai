@@ -10,12 +10,12 @@ module.exports = {
       colors: {
         primary: {
           DEFAULT: "rgb(var(--color-primary))",
-          darker: "rgb(97, 50, 178)",
+          darker: "rgb(209, 110, 0)",
         },
 
         secondary: {
           DEFAULT: "rgb(var(--color-secondary))",
-          darker: "rgb(189, 66, 141)",
+          darker: "rgb(8, 80, 130)",
         },
 
         dark: {
@@ -26,6 +26,18 @@ module.exports = {
         black: "rgb(var(--color-black))",
         light: "rgb(var(--color-light))",
         white: "rgb(var(--color-white))",
+      },
+
+      borderRadius: {
+        DEFAULT: ".5rem",
+      },
+
+      transitionDuration: {
+        DEFAULT: ".2s",
+      },
+
+      transitionTimingFunction: {
+        DEFAULT: "ease-out",
       },
     },
   },
